@@ -1,0 +1,23 @@
+A vagrant to flash your Gemini PDA
+==================================
+
+Gemini PDA flash tools don't work on MacOS and finding the right setup for the VM along with the right Linux setup is tricky. Here is one that just works.
+Tested on MacOS.
+
+Instructions:
+1- Install VirtualBox and the extensions
+2- Install vagrant
+3- Install vagrant vbguest plugin
+4- Bring up the VM with vagrant
+
+With homebrew:
+brew cask install virtualbox virtualbox-extension-pack vagrant
+vagrant plugin install vagrant-vbguest
+vagrant up
+
+Now you have a VM running which you can use to run Gemini PDA flash tools.
+From there on your host OS simply download the flash tools http://support.planetcom.co.uk/download/FlashToolLinux.tgz in the image folder along with the firmware files you want to flash from http://support.planetcom.co.uk/partitionTool.html
+Log in the VM using vagrant/vagrant, open a terminal and launch the flash tool with something like: sudo /vagrant/image/FlashToolLinux/flash_tool.sh
+Follow the flashing instructions from http://support.planetcom.co.uk/index.php/Linux_Flashing_Guide#Configuring_Flash_Tool
+
+Enjoy!
